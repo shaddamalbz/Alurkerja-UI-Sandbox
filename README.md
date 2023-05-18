@@ -1,10 +1,10 @@
-# React + TypeScript + Vite Starter
+# Alurkerja UI Starter
 
 A template for starting develop React application using vite
 
 ## Tech Stack
 
-**Client:** React, React-Router-Dom v6, Typescript, Vite v3
+**Client:** React v18, React-Router-Dom v6, Typescript, Vite v3
 
 **Testing:** Vitest, Testing-library
 
@@ -19,26 +19,9 @@ Clone the project
 Clone the project
 
 ```bash
-  git clone https://github.com/shaddamalbz/React-Typescript-Vite-Starter
-  cd my-project
-  yarn install
-```
-
-Start the server
-
-```bash
-  yarn dev
-```
-
-### Using starter with tailwindcss
-
-Clone the project
-
-```bash
-  git clone https://github.com/shaddamalbz/React-Typescript-Vite-Starter
-  cd my-project
-  git pull origin tailwind
-  yarn install
+  git clone https://gitlab.javan.co.id/alurkerja-template/alurkerja-UI-starter.git
+  cd alurkerja-UI-starter
+  yarn
 ```
 
 Start the server

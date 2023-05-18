@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
+import 'alurkerja-ui/dist/style.css'
 
 // routes
 import router from './routes/root'
