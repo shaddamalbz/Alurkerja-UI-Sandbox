@@ -8,8 +8,7 @@ function App() {
   const [search, setSearch] = useState<string>()
 
   return (
-    <>
-      <h1 className="font-bold">Alurkerja UI Starter</h1>
+    <section className="bg-white">
       <TableLowcode
         baseUrl="https://api-geekacademy.merapi.javan.id"
         tableName="article"
@@ -23,7 +22,7 @@ function App() {
         search={search}
         setSearch={setSearch}
       />
-    </>
+    </section>
   )
 }
 

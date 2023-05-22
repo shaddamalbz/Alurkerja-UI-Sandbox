@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 
 // layouts
-import BaseLayout from '@/layouts/baseLayout'
+import { AdminLayout } from '@/layouts'
 
 // pages
 import App from '../App'
@@ -9,7 +9,7 @@ import App from '../App'
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <BaseLayout />,
+    element: <AdminLayout />,
     children: [{ index: true, element: <App /> }],
   },
 ])
