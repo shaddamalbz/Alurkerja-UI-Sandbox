@@ -702,10 +702,10 @@ ajv@^6.10.0, ajv@^6.12.4:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-alurkerja-ui@^0.0.66:
-  version "0.0.66"
-  resolved "https://registry.yarnpkg.com/alurkerja-ui/-/alurkerja-ui-0.0.66.tgz#837de40fbb084f3c28d8225a51ed0ad31771ebc3"
-  integrity sha512-OPxztanQq05/TgPaPUKej35W28p8w7yvgyc3ANUGbcr146cvwrjoI64FMwpH+077wQ3L1+aNZogpt2gDGHkFOA==
+alurkerja-ui@^0.0.102:
+  version "0.0.102"
+  resolved "https://registry.yarnpkg.com/alurkerja-ui/-/alurkerja-ui-0.0.102.tgz#e3d4550305d44601e792c150c8f5b6a570dd4daa"
+  integrity sha512-B76VUT0YhsdblWaullwQPOsnyLN4dzTJNsXhf8pbNC8zjRhNmoNJ+vUsEUOFhDIqxRFoiuHlFy15/8M3gkzR6w==
   dependencies:
     "@headlessui/react" "^1.7.14"
     react "^18.2.0"
@@ -1033,6 +1033,11 @@ cliui@^7.0.2:
     string-width "^4.2.0"
     strip-ansi "^6.0.0"
     wrap-ansi "^7.0.0"
+
+clsx@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.2.1.tgz#0ddc4a20a549b59c93a4116bb26f5294ca17dc12"
+  integrity sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==
 
 color-convert@^1.9.0:
   version "1.9.3"
