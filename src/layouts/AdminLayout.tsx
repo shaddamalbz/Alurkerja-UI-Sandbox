@@ -7,10 +7,32 @@ export default function AdminLayout() {
   const [toggled, setToggled] = useState(false)
 
   return (
-    <>
-      <div className="fixed h-screen">
-        <Sidebar toggled={toggled} setToggled={setToggled} menuConfig={[]} />
+    <div className="max-w-screen">
+      <div className="fixed">
+        <Sidebar
+          toggled={toggled}
+          setToggled={setToggled}
+          menuConfig={[
+            { href: '/', label: 'Menu1' },
+            { href: '/', label: 'Menu2' },
+            { href: '/', label: 'Menu3' },
+            { href: '/', label: 'Menu4' },
+            { href: '/', label: 'Menu5' },
+            { href: '/', label: 'Menu6' },
+            { href: '/', label: 'Menu7' },
+            { href: '/', label: 'Menu8' },
+            { href: '/', label: 'Menu9' },
+            { href: '/', label: 'Menu1' },
+            { href: '/', label: 'Menu2' },
+            { href: '/', label: 'Menu3' },
+            { href: '/', label: 'Menu4' },
+            { href: '/', label: 'Menu5' },
+            { href: '/', label: 'Menu6' },
+            { href: '/', label: 'Menu7' },
+          ]}
+        />
       </div>
+
       <div
         className={clsx(
           'transition-[margin] ease-in-out duration-400',
@@ -22,6 +44,6 @@ export default function AdminLayout() {
           <Outlet />
         </main>
       </div>
-    </>
+    </div>
   )
 }
