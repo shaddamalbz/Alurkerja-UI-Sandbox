@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
-import { AuthContext } from 'alurkerja-ui'
-import axiosInstance from '@/api/index'
+import { AuthContext, ThemeContext } from 'alurkerja-ui'
+import axiosInstance from '@/api'
+import { theme } from '@/utils'
 import 'alurkerja-ui/dist/style.css'
 
 // routes
@@ -14,7 +15,9 @@ import './index.css'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <AuthContext.Provider value={axiosInstance}>
-      <RouterProvider router={router} />
+      <ThemeContext.Provider value={theme}>
+        <RouterProvider router={router} />
+      </ThemeContext.Provider>
     </AuthContext.Provider>
   </React.StrictMode>
 )
