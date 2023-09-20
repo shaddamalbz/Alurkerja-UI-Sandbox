@@ -17,14 +17,17 @@
     "jsx": "react-jsx",
     "baseUrl": "./src",
     "paths": {
-      "@/components/*": ["./components/*"],
+      "@/components": ["./components/"],
       "@/assets/*": ["./assets/*"],
       "@/layouts": ["./layouts/"],
       "@/pages/*": ["./pages/*"],
       "@/utils": ["./utils/"],
-      "@/api": ["./api/"]
+      "@/api": ["./api/"],
+      "@/pages": ["./pages/"],
+      "@/stores": ["./stores/"]
     }
   },
+
   "include": [".eslintrc.cjs", "./src", "vite.config.ts", "vitest.config.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,6 +1,4 @@
-# Alurkerja UI Starter
-
-A template for starting develop React application using vite
+# Welcome to ALurkerja Starter
 
 ## Tech Stack
 
@@ -10,40 +8,25 @@ A template for starting develop React application using vite
 
 **Code Quality:** Eslint, Prettier, Airbnb Style Guides
 
+**List Icon:** Lucide
+
 ## Run Locally
 
 Clone the project
 
-### Using base starter
-
-Clone the project
-
 ```bash
-  git clone https://gitlab.javan.co.id/alurkerja-template/alurkerja-UI-starter.git
-  cd alurkerja-UI-starter
-  yarn
+  git clone https://gitlab.javan.co.id/internal-growth/projectman/projectman-fe-new.git
+  cd projectman-fe-new
+  yarn install --frozen-lockfile
 ```
+
+Copy paste env
+
+1. create file .env.local
+2. copy all from .env.example to .env.local
 
 Start the server
 
 ```bash
   yarn dev
 ```
-
-## Running Tests
-
-To run tests, run the following command
-
-```bash
-  yarn test
-```
-
-For Coverage
-
-```bash
-  yarn coverage
-```
-
-## Authors
-
-- [@shaddamalbz](https://github.com/shaddamalbz)
