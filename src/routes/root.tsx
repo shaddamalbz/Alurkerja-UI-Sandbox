@@ -8,7 +8,6 @@ import { NotFound, Error } from '@/pages'
 import { Login, Register, ForgotPassword, ResetPassword } from '@/pages/Auth'
 import { simpleARoutes } from './simpleARoutes'
 import { simpleBRoutes } from './simpleBRoutes'
-import { simpleCRoutes } from './simpleCRoutes'
 
 const router = createBrowserRouter([
   {
@@ -49,7 +48,6 @@ const router = createBrowserRouter([
   },
   ...simpleARoutes,
   ...simpleBRoutes,
-  ...simpleCRoutes,
 ])
 
 export default router
