@@ -1,7 +1,8 @@
 import { TableLowcode } from 'alurkerja-ui'
 import { useState } from 'react'
+import { UserTaskButton } from '@/components'
 
-export const Starter = () => {
+export const ListSimpleBPage = () => {
   const [pageConfig, setPageConfig] = useState({ limit: 10, page: 0 })
   const [renderState, setRenderState] = useState(0)
   const [filterBy, setFilterBy] = useState<{ [x: string]: any }>()
@@ -12,8 +13,7 @@ export const Starter = () => {
     <section className="bg-white">
       <TableLowcode
         baseUrl={import.meta.env.VITE_API_BASEURL}
-        tableName="category"
-        module="category"
+        specPath="/api/simple-b"
         renderState={renderState}
         setRenderState={setRenderState}
         pageConfig={pageConfig}
@@ -24,6 +24,13 @@ export const Starter = () => {
         setSearch={setSearch}
         selectedRow={selectedRow}
         setSelectedRow={setSelectedRow}
+        customButtonBpmn={({ available_task, rowValue, usertaskMapping }) => (
+          <UserTaskButton
+            availableTasks={available_task}
+            rowValue={rowValue}
+            userTaskMapping={usertaskMapping}
+          />
+        )}
       />
     </section>
   )

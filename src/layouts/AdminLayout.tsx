@@ -24,52 +24,52 @@ export default function AdminLayout() {
   }
 
   // uncomment this for authenticated feature
-  // useEffect(() => {
-  //   if (token === null) {
-  //     handleUnauthenticated()
-  //     setIsAppReady(true)
-  //   } else {
-  //     axiosInstance.interceptors.request.use(
-  //       async (config) => {
-  //         if (token) {
-  //           config.headers.Authorization = `Bearer ${token}`
-  //         }
-  //         return config
-  //       },
-  //       (err) => {
-  //         return Promise.reject(err)
-  //       }
-  //     )
+  useEffect(() => {
+    if (token === null) {
+      handleUnauthenticated()
+      setIsAppReady(true)
+    } else {
+      axiosInstance.interceptors.request.use(
+        async (config) => {
+          if (token) {
+            config.headers.Authorization = `Bearer ${token}`
+          }
+          return config
+        },
+        (err) => {
+          return Promise.reject(err)
+        }
+      )
 
-  //     axiosInstance.interceptors.response.use(
-  //       (response) => {
-  //         // Any status code that lie within the range of 2xx cause this function to trigger
+      axiosInstance.interceptors.response.use(
+        (response) => {
+          // Any status code that lie within the range of 2xx cause this function to trigger
 
-  //         return response
-  //       },
-  //       (error) => {
-  //         // Any status codes that falls outside the range of 2xx cause this function to trigger
-  //         if (error.response.status === 401) {
-  //           logout()
-  //         }
-  //         return Promise.reject(error)
-  //       }
-  //     )
+          return response
+        },
+        (error) => {
+          // Any status codes that falls outside the range of 2xx cause this function to trigger
+          if (error.response.status === 401) {
+            logout()
+          }
+          return Promise.reject(error)
+        }
+      )
 
-  //     axiosInstance
-  //       .get<AxiosResponse<UserType>>('/auth/info')
-  //       .then((res) => {
-  //         setCurrentUser(res.data.data)
-  //       })
-  //       .finally(() => {
-  //         setIsAppReady(true)
-  //       })
-  //   }
-  // }, [token])
+      axiosInstance
+        .get<AxiosResponse<UserType>>('/auth/info')
+        .then((res) => {
+          setCurrentUser(res.data.data)
+        })
+        .finally(() => {
+          setIsAppReady(true)
+        })
+    }
+  }, [token])
 
-  // if (!isAppReady) {
-  //   return <FullLoading />
-  // }
+  if (!isAppReady) {
+    return <FullLoading />
+  }
 
   return (
     <div className="max-w-screen">

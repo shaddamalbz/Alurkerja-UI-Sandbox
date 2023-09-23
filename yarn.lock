@@ -719,10 +719,10 @@ ajv@^6.10.0, ajv@^6.12.4:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-alurkerja-ui@^0.0.358:
-  version "0.0.358"
-  resolved "https://registry.yarnpkg.com/alurkerja-ui/-/alurkerja-ui-0.0.358.tgz#f111159908e7f77a078b555f66c697ae5d5f0c5b"
-  integrity sha512-CdbjdRU1WkEquaior8iEWt0Jstwkt3JacH2618QBZKpj9GUvB26FN2IpwVd9gSDACpI1LvG+evjjI1d7sVBsOQ==
+alurkerja-ui@^0.0.362:
+  version "0.0.362"
+  resolved "https://registry.yarnpkg.com/alurkerja-ui/-/alurkerja-ui-0.0.362.tgz#0b8c641dfa9a349fe147b6b06fd2a50a1afb6ff1"
+  integrity sha512-s6zn09vhv7AxY/dC2Lip/cNebQSs/zgcZfHVqAmcP4zDAldCgnSKjqetpK3ZpzARONh4lUX9dxAc8K9cKjUXSw==
   dependencies:
     "@headlessui/react" "^1.7.14"
     "@types/dompurify" "^3.0.2"
@@ -3048,6 +3048,11 @@ react-hook-form@^7.46.1:
   version "7.46.1"
   resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.46.1.tgz#39347dbff19d980cb41087ac32a57abdc6045bb3"
   integrity sha512-0GfI31LRTBd5tqbXMGXT1Rdsv3rnvy0FjEk8Gn9/4tp6+s77T7DPZuGEpBRXOauL+NhyGT5iaXzdIM2R6F/E+w==
+
+react-icons@^4.11.0:
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.11.0.tgz#4b0e31c9bfc919608095cc429c4f1846f4d66c65"
+  integrity sha512-V+4khzYcE5EBk/BvcuYRq6V/osf11ODUM2J8hg2FDSswRrGvqiYUYPRy4OdrWaQOBj4NcpJfmHZLNaD+VH0TyA==
 
 react-is@^16.13.1:
   version "16.13.1"

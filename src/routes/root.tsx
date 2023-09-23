@@ -4,8 +4,11 @@ import { Outlet, createBrowserRouter } from 'react-router-dom'
 import { AdminLayout } from '@/layouts'
 
 // pages
-import { NotFound, Error, Starter } from '@/pages'
-import { Login, Register, ForgotPassword, ResetPassword } from '@/pages/auth'
+import { NotFound, Error } from '@/pages'
+import { Login, Register, ForgotPassword, ResetPassword } from '@/pages/Auth'
+import { simpleARoutes } from './simpleARoutes'
+import { simpleBRoutes } from './simpleBRoutes'
+import { simpleCRoutes } from './simpleCRoutes'
 
 const router = createBrowserRouter([
   {
@@ -42,8 +45,11 @@ const router = createBrowserRouter([
     path: '/',
     element: <AdminLayout />,
     errorElement: <Error />,
-    children: [{ index: true, element: <Starter /> }],
+    children: [],
   },
+  ...simpleARoutes,
+  ...simpleBRoutes,
+  ...simpleCRoutes,
 ])
 
 export default router

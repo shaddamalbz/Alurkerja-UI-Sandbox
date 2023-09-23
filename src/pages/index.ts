@@ -1,4 +1,3 @@
 export { FullLoading } from './FullLoading'
-export { NotFound } from './404Page'
-export { Error } from './500Page'
-export { Starter } from './Starter'
+export { NotFound } from './404'
+export { Error } from './500'
