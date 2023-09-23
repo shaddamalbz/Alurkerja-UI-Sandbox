@@ -15,7 +15,7 @@
 Clone the project
 
 ```bash
-  git clone https://gitlab.javan.co.id/internal-growth/projectman/projectman-fe-new.git
+  git clone ssh://git@gitlab.javan.co.id:2229/alurkerja/alurkerja-template/alurkerja-UI-starter.git
   cd projectman-fe-new
   yarn install --frozen-lockfile
 ```
