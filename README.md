@@ -30,3 +30,8 @@ Start the server
 ```bash
   yarn dev
 ```
+
+## Credential dev
+
+email: <purwa@javan.co.id>
+password: password
