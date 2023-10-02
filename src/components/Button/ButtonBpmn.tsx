@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { Modal, Button } from 'alurkerja-ui'
 import { FaPlay } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import { UserTaskMapping } from 'alurkerja-ui/dist/types'
+import { UserTaskMapping } from 'alurkerja-ui'
 
 type IUserTaskButton = {
   availableTasks: any
@@ -22,7 +22,6 @@ export const UserTaskButton: React.FC<IUserTaskButton> = ({
         <Button
           type="button"
           className="text-gray-400 bg-gray-100"
-          size="xs"
           icon={<FaPlay size={10} />}
         />
       }
