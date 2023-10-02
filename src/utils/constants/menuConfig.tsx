@@ -1,9 +1,10 @@
 import type { MenuConfig } from 'alurkerja-ui'
-import { Home } from 'lucide-react'
+import { Home, LayoutDashboard } from 'lucide-react'
 
 export const menuConfig: MenuConfig[] = [
+  { href: '/', label: 'Dashboard', icon: <LayoutDashboard /> },
   {
-    href: '/',
+    href: '/example',
     label: 'Example Page',
     icon: <Home size={20} />,
     child: [

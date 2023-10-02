@@ -1,10 +1,10 @@
-import { FieldValues, useForm } from 'react-hook-form'
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { Input, StatusIcon } from 'alurkerja-ui'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import { Button } from '@/components'
 import { useAuthStore } from '@/stores'
-import { useEffect, useState } from 'react'
 
 const Register = () => {
   const {

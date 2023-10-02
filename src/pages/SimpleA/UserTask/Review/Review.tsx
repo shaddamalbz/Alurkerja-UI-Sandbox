@@ -1,4 +1,4 @@
-import { AlurkerjaForm } from 'alurkerja-ui'
+import { FormLowcode } from 'alurkerja-ui'
 import { useForm } from 'react-hook-form'
 import { useParams } from 'react-router-dom'
 import _ from 'underscore'
@@ -10,7 +10,7 @@ export const ReviewCreate = () => {
   return (
     <section className="bg-white p-6">
       {id && task_id && (
-        <AlurkerjaForm
+        <FormLowcode
           id={id}
           isUsertask
           taskId={task_id}

@@ -1,10 +1,10 @@
+import { useState } from 'react'
 import { FieldValues, useForm } from 'react-hook-form'
 import { Input, StatusIcon } from 'alurkerja-ui'
 import { Link, useNavigate } from 'react-router-dom'
 
 import { Button } from '@/components'
 import { useAuthStore } from '@/stores'
-import { useState } from 'react'
 
 const Login = () => {
   const {
