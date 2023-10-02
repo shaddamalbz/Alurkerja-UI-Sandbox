@@ -31,7 +31,11 @@ Start the server
   yarn dev
 ```
 
+## [Dokumentasi Alurkerja (Here)](https://alurkerja-docs.vercel.app/docs/tablelowcode)
+
 ## Credential dev
 
-email: <purwa@javan.co.id>
+```bash
+email: purwa@javan.co.id
 password: password
+```
