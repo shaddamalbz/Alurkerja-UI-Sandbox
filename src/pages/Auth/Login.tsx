@@ -2,8 +2,11 @@ import { useState } from 'react'
 import { FieldValues, useForm } from 'react-hook-form'
 import { Input, StatusIcon } from 'alurkerja-ui'
 import { Link, useNavigate } from 'react-router-dom'
+import { useMutation } from '@tanstack/react-query'
+import Swal from 'sweetalert2'
 
-import { Button } from '@/components'
+import { Button, Dialog } from '@/components'
+import { axiosInstance } from '@/api'
 import { useAuthStore } from '@/stores'
 
 const Login = () => {
@@ -18,38 +21,45 @@ const Login = () => {
     },
   })
   const navigate = useNavigate()
-  const { login } = useAuthStore()
+  const { setToken } = useAuthStore()
 
-  const [loading, setLoading] = useState({ login: false })
+  const { mutate, isLoading } = useMutation({
+    mutationFn: (credential: { email: string; password: string }) => {
+      return axiosInstance.post('/auth/login', credential)
+    },
+    onMutate: () => {
+      setErrorMessage(undefined)
+    },
+    onSuccess: (res) => {
+      localStorage.setItem('token', res.data.data.access_token)
+      setToken(res.data.data.access_token)
+      Dialog.success({
+        title: 'Berhasil Login!',
+        description: `Selamat datang ${res.data.data.name}`,
+        callback: () => {
+          navigate('/')
+        },
+      })
+    },
+    onError(error: any) {
+      if (error.response.status === 401) {
+        setErrorMessage('Email / Password salah')
+        setTimeout(() => {
+          setErrorMessage(undefined)
+        }, 2500)
+      } else {
+        setErrorMessage('Server Internal Error')
+        setTimeout(() => {
+          setErrorMessage(undefined)
+        }, 2500)
+      }
+    },
+  })
+
   const [errorMessage, setErrorMessage] = useState<string>()
 
-  const handlerLoading = (key: string, value: boolean) => {
-    setLoading((prev) => ({ ...prev, [key]: value }))
-  }
-
   const onSubmit = (data: FieldValues) => {
-    handlerLoading('login', true)
-    setErrorMessage(undefined)
-    login({ email: data.email, password: data.password })
-      .then(() => {
-        navigate('/')
-      })
-      .catch((err) => {
-        if (err.response.status === 401) {
-          setErrorMessage('Email / Password salah')
-          setTimeout(() => {
-            setErrorMessage(undefined)
-          }, 2500)
-        } else {
-          setErrorMessage('Server Internal Error')
-          setTimeout(() => {
-            setErrorMessage(undefined)
-          }, 2500)
-        }
-      })
-      .finally(() => {
-        handlerLoading('login', false)
-      })
+    mutate({ email: data.email, password: data.password })
   }
 
   return (
@@ -109,7 +119,7 @@ const Login = () => {
               {errors?.password?.message}
             </span>
           </div>
-          <Button loading={loading.login}>Login</Button>
+          <Button loading={isLoading}>Login</Button>
 
           <Link to="/register">
             <Button variant="outlined">Register</Button>
