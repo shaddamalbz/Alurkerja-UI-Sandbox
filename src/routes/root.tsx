@@ -8,6 +8,7 @@ import { NotFound, Error } from '@/pages'
 import { Login, Register, ForgotPassword, ResetPassword } from '@/pages/Auth'
 import { simpleARoutes } from './simpleARoutes'
 import { simpleBRoutes } from './simpleBRoutes'
+import { Dashboard } from '@/pages/Dashboard'
 
 const router = createBrowserRouter([
   {
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
     path: '/',
     element: <AdminLayout />,
     errorElement: <Error />,
-    children: [],
+    children: [{ index: true, element: <Dashboard /> }],
   },
   ...simpleARoutes,
   ...simpleBRoutes,

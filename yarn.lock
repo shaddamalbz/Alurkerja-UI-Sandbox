@@ -288,6 +288,16 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@canvasjs/charts@^3.7.21":
+  version "3.7.21"
+  resolved "https://registry.yarnpkg.com/@canvasjs/charts/-/charts-3.7.21.tgz#626dfd55df50749f307c3de287faf6d96d2ef5f8"
+  integrity sha512-lh/BigMFf/myzF2RsquziK/a7lNiNp/yAS2HOdzVElHU01mdkEfpczbinq9NSJzqJzLBxFhE39d8h8frSZTKyA==
+
+"@canvasjs/react-charts@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@canvasjs/react-charts/-/react-charts-1.0.0.tgz#84e97e1e3bd045cf345ac9dbe270edf11446af51"
+  integrity sha512-wGI675kz65owAwXZWzJULK9GXKCrPV59+CCawXP801f4rmYGmPskdtGrczgJhA8ThFEgIvq3K4qrkpLDPSmxCQ==
+
 "@emotion/babel-plugin@^11.11.0":
   version "11.11.0"
   resolved "https://registry.yarnpkg.com/@emotion/babel-plugin/-/babel-plugin-11.11.0.tgz#c2d872b6a7767a9d176d007f5b31f7d504bb5d6c"
