@@ -16,10 +16,6 @@ export const menuConfig: MenuConfig[] = [
         href: '/simple-b',
         label: 'Simple B',
       },
-      {
-        href: '/simple-c',
-        label: 'Simple C',
-      },
     ],
   },
 ]

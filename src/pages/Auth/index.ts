@@ -1,6 +1,4 @@
-import Login from './Login'
-import Register from './Register'
-import ForgotPassword from './ForgotPassword'
-import ResetPassword from './ResetPassword'
-
-export { Login, Register, ForgotPassword, ResetPassword }
+export * from './Login'
+export * from './Register'
+export * from './ForgotPassword'
+export * from './ResetPassword'

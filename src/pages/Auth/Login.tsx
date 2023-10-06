@@ -9,7 +9,7 @@ import { Button, Dialog } from '@/components'
 import { axiosInstance } from '@/api'
 import { useAuthStore } from '@/stores'
 
-const Login = () => {
+export const Login = () => {
   const {
     handleSubmit,
     register,
@@ -142,5 +142,3 @@ const Login = () => {
     </div>
   )
 }
-
-export default Login

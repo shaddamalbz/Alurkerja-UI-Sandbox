@@ -1,3 +1,3 @@
-export { FullLoading } from './FullLoading'
-export { NotFound } from './404'
-export { Error } from './500'
+export * from './FullLoading'
+export * from './404'
+export * from './500'

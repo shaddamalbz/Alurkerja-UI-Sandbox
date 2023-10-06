@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 import { Button } from '@/components'
 import { axiosInstance } from '@/api'
 
-const ForgotPassword = () => {
+export const ForgotPassword = () => {
   const {
     handleSubmit,
     register,
@@ -95,5 +95,3 @@ const ForgotPassword = () => {
     </div>
   )
 }
-
-export default ForgotPassword

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import { Button } from '@/components'
 import { useAuthStore } from '@/stores'
 
-const Register = () => {
+export const Register = () => {
   const {
     handleSubmit,
     register,
@@ -187,5 +187,3 @@ const Register = () => {
     </div>
   )
 }
-
-export default Register

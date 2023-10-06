@@ -13,10 +13,11 @@ import { useAuthStore } from '@/stores'
 export default function AdminLayout() {
   const { pathname } = useLocation()
   const navigate = useNavigate()
-  const { token, logout, currentUser, setCurrentUser } = useAuthStore()
+  const { logout, currentUser, setCurrentUser, setToken } = useAuthStore()
+
+  const token = localStorage.getItem('token')
 
   const [isAppReady, setIsAppReady] = useState(false)
-
   const [toggled, setToggled] = useState(false)
 
   const handleUnauthenticated = async () => {
@@ -51,6 +52,8 @@ export default function AdminLayout() {
           // Any status codes that falls outside the range of 2xx cause this function to trigger
           if (error.response.status === 401) {
             logout()
+          } else {
+            setToken(token)
           }
           return Promise.reject(error)
         }

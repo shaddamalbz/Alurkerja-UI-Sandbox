@@ -7,7 +7,7 @@ import { NotFound } from '@/pages'
 import { axiosInstance } from '@/api'
 import { useState } from 'react'
 
-const ResetPasswordPage = () => {
+export const ResetPassword = () => {
   const searchParams = new URLSearchParams(window.location.search)
   const token = searchParams.get('token')
   const email = searchParams.get('email')
@@ -124,5 +124,3 @@ const ResetPasswordPage = () => {
     </div>
   )
 }
-
-export default ResetPasswordPage
