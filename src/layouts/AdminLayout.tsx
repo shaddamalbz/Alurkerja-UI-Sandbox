@@ -30,6 +30,7 @@ export default function AdminLayout() {
       handleUnauthenticated()
       setIsAppReady(true)
     } else {
+      setToken(token)
       axiosInstance.interceptors.request.use(
         async (config) => {
           if (token) {
@@ -52,8 +53,6 @@ export default function AdminLayout() {
           // Any status codes that falls outside the range of 2xx cause this function to trigger
           if (error.response.status === 401) {
             logout()
-          } else {
-            setToken(token)
           }
           return Promise.reject(error)
         }
