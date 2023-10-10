@@ -3,45 +3,29 @@ import { Outlet, useLocation, useNavigate, Link } from 'react-router-dom'
 import { Header, Sidebar } from 'alurkerja-ui'
 import clsx from 'clsx'
 import { LogOut, User2 } from 'lucide-react'
-import { AxiosResponse } from 'axios'
+import { useCookies } from 'react-cookie'
 
 import { UserType, menuConfig } from '@/utils'
 import { FullLoading } from '@/pages'
 import { axiosInstance } from '@/api'
 import { useAuthStore } from '@/stores'
+import { AxiosResponse } from 'axios'
 
 export default function AdminLayout() {
   const { pathname } = useLocation()
   const navigate = useNavigate()
-  const { logout, currentUser, setCurrentUser, setToken } = useAuthStore()
-
-  const token = localStorage.getItem('token')
+  const { currentUser, setCurrentUser } = useAuthStore()
+  const [cookies, _setCookies, removeCookies] = useCookies()
 
   const [isAppReady, setIsAppReady] = useState(false)
+
   const [toggled, setToggled] = useState(false)
 
-  const handleUnauthenticated = async () => {
-    navigate('/login')
-  }
-
-  // uncomment this for authenticated feature
   useEffect(() => {
-    if (token === null) {
-      handleUnauthenticated()
-      setIsAppReady(true)
-    } else {
-      setToken(token)
-      axiosInstance.interceptors.request.use(
-        async (config) => {
-          if (token) {
-            config.headers.Authorization = `Bearer ${token}`
-          }
-          return config
-        },
-        (err) => {
-          return Promise.reject(err)
-        }
-      )
+    if (cookies.token) {
+      axiosInstance.defaults.headers.common[
+        'Authorization'
+      ] = `Bearer ${cookies.token}`
 
       axiosInstance.interceptors.response.use(
         (response) => {
@@ -52,7 +36,6 @@ export default function AdminLayout() {
         (error) => {
           // Any status codes that falls outside the range of 2xx cause this function to trigger
           if (error.response.status === 401) {
-            logout()
           }
           return Promise.reject(error)
         }
@@ -66,8 +49,10 @@ export default function AdminLayout() {
         .finally(() => {
           setIsAppReady(true)
         })
+    } else {
+      navigate('/login')
     }
-  }, [token])
+  }, [cookies])
 
   if (!isAppReady) {
     return <FullLoading />
@@ -77,7 +62,12 @@ export default function AdminLayout() {
     <div className="max-w-screen">
       <div className="fixed">
         <Sidebar
-          logo={<h1>Alurkerja</h1>}
+          logo={
+            <img
+              className="h-10 w-auto aspect-auto object-cover"
+              src="/logo.webp"
+            />
+          }
           toggled={toggled}
           setToggled={setToggled}
           menuConfig={menuConfig}
@@ -111,7 +101,7 @@ export default function AdminLayout() {
               <div
                 className="hover:bg-light-blue-alurkerja hover:text-main-blue-alurkerja px-4 py-2 cursor-pointer flex items-center gap-1"
                 onClick={() => {
-                  logout()
+                  removeCookies('token')
                 }}
               >
                 <LogOut size={18} />

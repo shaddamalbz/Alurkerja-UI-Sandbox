@@ -3,11 +3,10 @@ import { FieldValues, useForm } from 'react-hook-form'
 import { Input, StatusIcon } from 'alurkerja-ui'
 import { Link, useNavigate } from 'react-router-dom'
 import { useMutation } from '@tanstack/react-query'
-import Swal from 'sweetalert2'
+import { useCookies } from 'react-cookie'
 
 import { Button, Dialog } from '@/components'
 import { axiosInstance } from '@/api'
-import { useAuthStore } from '@/stores'
 
 export const Login = () => {
   const {
@@ -21,7 +20,7 @@ export const Login = () => {
     },
   })
   const navigate = useNavigate()
-  const { setToken } = useAuthStore()
+  const [_cookies, setCookie] = useCookies()
 
   const { mutate, isLoading } = useMutation({
     mutationFn: (credential: { email: string; password: string }) => {
@@ -31,8 +30,9 @@ export const Login = () => {
       setErrorMessage(undefined)
     },
     onSuccess: (res) => {
-      localStorage.setItem('token', res.data.data.access_token)
-      setToken(res.data.data.access_token)
+      // 24 jam = 86400 detik
+      const maxAge = 86400
+      setCookie('token', res.data.data.access_token, { maxAge: maxAge })
       Dialog.success({
         title: 'Berhasil Login!',
         description: `Selamat datang ${res.data.data.name}`,
@@ -55,7 +55,6 @@ export const Login = () => {
       }
     },
   })
-
   const [errorMessage, setErrorMessage] = useState<string>()
 
   const onSubmit = (data: FieldValues) => {
@@ -119,10 +118,14 @@ export const Login = () => {
               {errors?.password?.message}
             </span>
           </div>
-          <Button loading={isLoading}>Login</Button>
+          <Button block={false} loading={isLoading}>
+            Login
+          </Button>
 
           <Link to="/register">
-            <Button variant="outlined">Register</Button>
+            <Button block={false} variant="outlined">
+              Register
+            </Button>
           </Link>
           <Link
             className=" text-main-blue-alurkerja text-sm"

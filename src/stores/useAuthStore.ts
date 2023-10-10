@@ -5,9 +5,6 @@ import { axiosInstance } from '@/api'
 import { LoginResponseType, UserType } from '@/utils'
 
 interface UseAuthStore {
-  token: string | null
-  setToken: (value: string) => void
-  logout: () => void
   registerUser: (data: {
     name: string
     email: string
@@ -19,12 +16,6 @@ interface UseAuthStore {
 }
 
 const useAuthStore = create<UseAuthStore>((set) => ({
-  token: null,
-  setToken: (value: string) => set(() => ({ token: value })),
-  logout: () => {
-    set(() => ({ token: null }))
-    localStorage.removeItem('token')
-  },
   registerUser: async ({ name, email, password, password_confirmation }) => {
     const payload = { email, password, name, password_confirmation }
     return new Promise((resolve, reject) => {

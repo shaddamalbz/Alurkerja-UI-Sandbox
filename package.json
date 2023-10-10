@@ -49,6 +49,7 @@
     "lucide-react": "^0.279.0",
     "postcss": "^8.4.23",
     "prettier": "^2.8.1",
+    "react-cookie": "^6.1.1",
     "react-hook-form": "^7.46.1",
     "react-icons": "^4.11.0",
     "sweetalert2": "^11.7.28",
