@@ -1,11 +1,11 @@
 import { FieldValues, useForm } from 'react-hook-form'
-import { Input } from 'alurkerja-ui'
+import { Input, Button } from 'alurkerja-ui'
 import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
-import { Button } from '@/components'
+import { useState } from 'react'
+
 import { NotFound } from '@/pages'
 import { axiosInstance } from '@/api'
-import { useState } from 'react'
 
 export const ResetPassword = () => {
   const searchParams = new URLSearchParams(window.location.search)
@@ -112,7 +112,9 @@ export const ResetPassword = () => {
             </span>
           </div>
 
-          <Button loading={loading}>Reset Password</Button>
+          <Button loading={loading} block={false}>
+            Reset Password
+          </Button>
           <Link
             className="text-center text-main-blue-alurkerja text-sm"
             to="/login"

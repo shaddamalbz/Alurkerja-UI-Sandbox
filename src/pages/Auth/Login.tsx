@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { FieldValues, useForm } from 'react-hook-form'
-import { Input, StatusIcon } from 'alurkerja-ui'
+import { Input, StatusIcon, Button } from 'alurkerja-ui'
 import { Link, useNavigate } from 'react-router-dom'
 import { useMutation } from '@tanstack/react-query'
 import { useCookies } from 'react-cookie'
 
-import { Button, Dialog } from '@/components'
+import { Dialog } from '@/components'
 import { axiosInstance } from '@/api'
 
 export const Login = () => {

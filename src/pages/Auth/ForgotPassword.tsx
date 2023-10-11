@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import { FieldValues, useForm } from 'react-hook-form'
-import { Input } from 'alurkerja-ui'
+import { Input, Button } from 'alurkerja-ui'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
-import { Button } from '@/components'
 import { axiosInstance } from '@/api'
 
 export const ForgotPassword = () => {
@@ -83,7 +82,9 @@ export const ForgotPassword = () => {
             </span>
           </div>
 
-          <Button loading={loading}>Kirim Email</Button>
+          <Button loading={loading} block={false}>
+            Kirim Email
+          </Button>
           <Link
             className="text-center text-main-blue-alurkerja text-sm"
             to="/login"

@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Input, StatusIcon } from 'alurkerja-ui'
+import { Input, StatusIcon, Button } from 'alurkerja-ui'
 import { useNavigate } from 'react-router-dom'
 
-import { Button } from '@/components'
 import { useAuthStore } from '@/stores'
 
 export const Register = () => {
@@ -174,7 +173,9 @@ export const Register = () => {
               {errors?.password_confirmation?.message}
             </span>
           </div>
-          <Button loading={loading.register}>Register</Button>
+          <Button loading={loading.register} block={false}>
+            Register
+          </Button>
         </form>
         <div className="absolute right-0 bottom-0 mb-6 mr-6 mt-auto flex items-center gap-4">
           <img
