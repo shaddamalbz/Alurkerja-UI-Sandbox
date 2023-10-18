@@ -1,2 +1,2 @@
-export type { LoginResponseType, LoginUserType } from './loginResponseType'
-export type { UserType } from './UserType'
+export type * from './loginResponseType'
+export type * from './UserType'

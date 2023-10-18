@@ -11,7 +11,7 @@ import { axiosInstance } from '@/api'
 import { useAuthStore } from '@/stores'
 import { AxiosResponse } from 'axios'
 
-export default function AdminLayout() {
+export function AdminLayout() {
   const { pathname } = useLocation()
   const navigate = useNavigate()
   const { currentUser, setCurrentUser } = useAuthStore()

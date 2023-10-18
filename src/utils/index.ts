@@ -1,5 +1,3 @@
-import theme from './theme'
-import { menuConfig } from './constants'
+export * from './theme'
+export * from './constants'
 export * from './types'
-
-export { theme, menuConfig }

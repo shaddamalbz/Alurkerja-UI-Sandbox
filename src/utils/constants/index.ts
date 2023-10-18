@@ -1,3 +1,1 @@
-import { menuConfig } from './menuConfig'
-
-export { menuConfig }
+export * from './menuConfig'
