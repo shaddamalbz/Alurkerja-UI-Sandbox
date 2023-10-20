@@ -31,6 +31,10 @@ Start the server
   yarn dev
 ```
 
+## Snippet Alurkerja
+
+snippet alurkerja merupakan shortcut yang dapat digunakan untuk mempercepat penggunakan komponen alurkerja contohnya `tblc` untuk menggunakan component TableLowcode, `tblcf` untuk TableLowcode yang hanya perlu filter saja, `tblcstate` untuk megenerate semua state yang dibutuhkan TableLowcode. detailnya bisa check di `.vscode/alurkerja.code-snippets`
+
 ## [Dokumentasi Alurkerja (Here)](https://alurkerja-docs.vercel.app)
 
 ## Credential dev

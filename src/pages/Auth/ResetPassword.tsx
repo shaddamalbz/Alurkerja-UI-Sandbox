@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import { useState } from 'react'
 
-import { NotFound } from '@/pages'
+import { NotFound } from '@/pages/Others'
 import { axiosInstance } from '@/api'
 
 export const ResetPassword = () => {

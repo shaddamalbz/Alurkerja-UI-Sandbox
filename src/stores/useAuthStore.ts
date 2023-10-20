@@ -2,7 +2,8 @@ import { create } from 'zustand'
 import Swal from 'sweetalert2'
 import _ from 'underscore'
 import { axiosInstance } from '@/api'
-import { LoginResponseType, UserType } from '@/utils'
+import { IUser } from '@/utils'
+import { AxiosResponse } from 'axios'
 
 interface UseAuthStore {
   registerUser: (data: {
@@ -11,8 +12,8 @@ interface UseAuthStore {
     password: string
     password_confirmation: string
   }) => Promise<any>
-  currentUser: UserType | undefined
-  setCurrentUser: (data: UserType) => void
+  currentUser: IUser | undefined
+  setCurrentUser: (data: IUser) => void
 }
 
 const useAuthStore = create<UseAuthStore>((set) => ({
@@ -20,7 +21,7 @@ const useAuthStore = create<UseAuthStore>((set) => ({
     const payload = { email, password, name, password_confirmation }
     return new Promise((resolve, reject) => {
       axiosInstance
-        .post<LoginResponseType>('/auth/register', payload)
+        .post<AxiosResponse>('/auth/register', payload)
         .then((res) => {
           if (res.status === 201) {
             Swal.fire({

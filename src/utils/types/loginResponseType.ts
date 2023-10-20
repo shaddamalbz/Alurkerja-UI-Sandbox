@@ -7,8 +7,3 @@ export interface LoginUserType {
   name: string
   updated_at: Date
 }
-
-export interface LoginResponseType {
-  data: LoginUserType
-  message: string
-}

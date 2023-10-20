@@ -4,12 +4,12 @@ import { Header, Sidebar } from 'alurkerja-ui'
 import clsx from 'clsx'
 import { LogOut, User2 } from 'lucide-react'
 import { useCookies } from 'react-cookie'
+import { AxiosResponse } from 'axios'
 
-import { UserType, menuConfig } from '@/utils'
-import { FullLoading } from '@/pages'
+import { IUser, menuConfig } from '@/utils'
+import { FullLoading } from '@/pages/Others'
 import { axiosInstance } from '@/api'
 import { useAuthStore } from '@/stores'
-import { AxiosResponse } from 'axios'
 
 export function AdminLayout() {
   const { pathname } = useLocation()
@@ -42,7 +42,7 @@ export function AdminLayout() {
       )
 
       axiosInstance
-        .get<AxiosResponse<UserType>>('/auth/info')
+        .get<AxiosResponse<IUser>>('/auth/info')
         .then((res) => {
           setCurrentUser(res.data.data)
         })
@@ -63,10 +63,7 @@ export function AdminLayout() {
       <div className="fixed">
         <Sidebar
           logo={
-            <img
-              className="h-10 w-auto aspect-auto object-cover"
-              src="/logo.webp"
-            />
+            <div className="text-main-blue-alurkerja font-bold">Alurkerja</div>
           }
           toggled={toggled}
           setToggled={setToggled}

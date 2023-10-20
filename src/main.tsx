@@ -13,7 +13,7 @@ import router from './routes/root'
 
 // styles
 import './index.css'
-import { FullLoading } from './pages'
+import { FullLoading } from '@/pages/Others'
 
 const queryClient = new QueryClient()
 

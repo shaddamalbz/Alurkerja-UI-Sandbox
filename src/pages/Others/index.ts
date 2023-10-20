@@ -1,3 +1,3 @@
-export * from './FullLoading'
 export * from './404'
 export * from './500'
+export * from './FullLoading'
