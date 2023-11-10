@@ -36,6 +36,7 @@
     "alurkerja-ui": "^1.0.1",
     "autoprefixer": "^10.4.14",
     "axios": "^1.4.0",
+    "axios-mock-adapter": "^1.22.0",
     "clsx": "^1.2.1",
     "eslint": "8.2.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
