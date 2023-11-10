@@ -60,8 +60,8 @@ describe('Login Page', async () => {
 
     const mock = new MockAdapter(axiosInstance)
     mock
-      .onPost('/auth/logins', { email: 'tes@gmail.com', password: 'asdf1234' })
-      .networkError()
+      .onPost('/auth/login', { email: 'tes@gmail.com', password: 'asdf1234' })
+      .reply(401)
 
     expect(btnLogin).toBeInTheDocument()
     expect(emailField).toBeInTheDocument()
@@ -77,5 +77,7 @@ describe('Login Page', async () => {
     await waitFor(() => {
       expect(screen.getByTestId('alert-popup')).toBeInTheDocument()
     })
+
+    expect(screen.getByText('Email / Password salah'))
   })
 })
