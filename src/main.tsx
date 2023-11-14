@@ -5,7 +5,7 @@ import { AuthContext, ThemeContext } from 'alurkerja-ui'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { axiosInstance } from '@/api'
-import { theme } from '@/utils'
+import { theme } from '@/utils/theme'
 import 'alurkerja-ui/dist/style.css'
 
 // routes

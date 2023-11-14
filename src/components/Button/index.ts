@@ -1,1 +1,1 @@
-export * from './ButtonBpmn'
+export { UserTaskButton } from './ButtonBpmn'

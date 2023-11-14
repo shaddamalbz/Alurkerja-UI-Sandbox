@@ -2,7 +2,7 @@ import { create } from 'zustand'
 import Swal from 'sweetalert2'
 import _ from 'underscore'
 import { axiosInstance } from '@/api'
-import { IUser } from '@/utils'
+import { IUser } from '@/utils/types'
 import { AxiosResponse } from 'axios'
 
 interface UseAuthStore {

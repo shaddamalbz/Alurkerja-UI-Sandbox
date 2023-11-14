@@ -1,4 +1,4 @@
-export interface LoginUserType {
+export interface ILoginUser {
   access_token: string
   created_at: Date
   email: string

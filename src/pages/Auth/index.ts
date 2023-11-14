@@ -1,4 +1,4 @@
-export * from './Login'
-export * from './Register'
-export * from './ForgotPassword'
-export * from './ResetPassword'
+export { Login } from './Login'
+export { Register } from './Register'
+export { ForgotPassword } from './ForgotPassword'
+export { ResetPassword } from './ResetPassword'

@@ -1,5 +1,5 @@
-export * from './loginResponseType'
-export * from './UserType'
+export type { ILoginUser } from './loginResponseType'
+export type { IUser } from './UserType'
 
 export type Pagination = {
   empty: boolean
