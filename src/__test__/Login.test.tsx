@@ -78,6 +78,6 @@ describe('Login Page', async () => {
       expect(screen.getByTestId('alert-popup')).toBeInTheDocument()
     })
 
-    expect(screen.getByText('Email / Password salah'))
+    expect(screen.getByText('Email / Password salah')).toBeInTheDocument()
   })
 })
