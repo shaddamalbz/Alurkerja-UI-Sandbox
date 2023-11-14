@@ -112,7 +112,7 @@ export const ResetPassword = () => {
             </span>
           </div>
 
-          <Button loading={loading} block={false}>
+          <Button loading={loading} isBlock={false}>
             Reset Password
           </Button>
           <Link

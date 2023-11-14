@@ -173,7 +173,7 @@ export const Register = () => {
               {errors?.password_confirmation?.message}
             </span>
           </div>
-          <Button loading={loading.register} block={false}>
+          <Button loading={loading.register} isBlock={false}>
             Register
           </Button>
         </form>

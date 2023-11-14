@@ -1,11 +1,9 @@
 import { useState, useContext } from 'react'
 import { FieldValues, useForm } from 'react-hook-form'
-import { Input, StatusIcon, Button, AuthContext } from 'alurkerja-ui'
+import { Input, StatusIcon, Button, AuthContext, Dialog } from 'alurkerja-ui'
 import { Link, useNavigate } from 'react-router-dom'
 import { useMutation } from '@tanstack/react-query'
 import { useCookies } from 'react-cookie'
-
-import { Dialog } from '@/components'
 
 export const Login = () => {
   const {
@@ -132,12 +130,16 @@ export const Login = () => {
               {errors?.password?.message}
             </span>
           </div>
-          <Button block={false} loading={isLoading} data-testid="button-login">
+          <Button
+            isBlock={false}
+            loading={isLoading}
+            data-testid="button-login"
+          >
             Login
           </Button>
 
           <Link to="/register">
-            <Button block={false} variant="outlined">
+            <Button isBlock={false} variant="outlined">
               Register
             </Button>
           </Link>

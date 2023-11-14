@@ -82,7 +82,7 @@ export const ForgotPassword = () => {
             </span>
           </div>
 
-          <Button loading={loading} block={false}>
+          <Button loading={loading} isBlock={false}>
             Kirim Email
           </Button>
           <Link
