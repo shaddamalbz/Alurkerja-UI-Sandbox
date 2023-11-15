@@ -37,9 +37,10 @@ snippet alurkerja merupakan shortcut yang dapat digunakan untuk mempercepat peng
 
 ## [Dokumentasi Alurkerja (Here)](https://alurkerja-docs.vercel.app)
 
-## Credential dev
+## Running Sonar Locally
 
-```bash
-email: purwa@javan.co.id
-password: password
-```
+1. start docker server for sonar docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest
+2. default credential username=admin, password=admin
+3. download sonar scanner [Sonar Scanner](https://docs.sonarsource.com/sonarqube/latest/try-out-sonarqube), unzip + edit env variable add sonar sonar scanner on it
+4. uncomment local properties on `sonar-project.properties` & comment sonar javan
+5. open terminal on vs code & runninng `sonar-scanner.bat`
