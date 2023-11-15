@@ -44,3 +44,8 @@ snippet alurkerja merupakan shortcut yang dapat digunakan untuk mempercepat peng
 3. download sonar scanner [Sonar Scanner](https://docs.sonarsource.com/sonarqube/latest/try-out-sonarqube), unzip + edit env variable add sonar sonar scanner on it
 4. uncomment local properties on `sonar-project.properties` & comment sonar javan
 5. open terminal on vs code & runninng `sonar-scanner.bat`
+
+## Publish Sonar Scanner Report to sonar.javan.co.id
+
+1. on `.gitlab-ci.yml` change {{project_key}} to your project name
+2. push & check pipeline then press `play` button to running sonar scanner
