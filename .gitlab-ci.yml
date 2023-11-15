@@ -19,7 +19,12 @@ sonar-scanner:
   script:
     - sonar-scanner
       -Dsonar.projectKey={{project_key}}
-      -Dsonar.sources=src
       -Dsonar.host.url=https://sonar.javan.co.id
       -Dsonar.login=cd0d286a9087c987496379df10fed7ec519dae2e
+      -Dsonar.sources=src
+      -Dsonar.tests=src/__test__
+      -Dsonar.test.inclusions=src/__test__
+      -Dsonar.testExecutionReportPaths=sonar-report.xml
+      -Dsonar.typescript.lcov.reportPaths=sonar-report.xml
+      -Dsonar.coverageReportPaths=coverage/clover.xml
   when: manual

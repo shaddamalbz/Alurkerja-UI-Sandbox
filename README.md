@@ -43,7 +43,8 @@ snippet alurkerja merupakan shortcut yang dapat digunakan untuk mempercepat peng
 2. default credential username=admin, password=admin
 3. download sonar scanner [Sonar Scanner](https://docs.sonarsource.com/sonarqube/latest/try-out-sonarqube), unzip + edit env variable add sonar sonar scanner on it
 4. uncomment local properties on `sonar-project.properties` & comment sonar javan
-5. open terminal on vs code & runninng `sonar-scanner.bat`
+5. jalankan test dengan command `yarn coverage`
+6. open terminal on vs code & running `sonar-scanner.bat`
 
 ## Publish Sonar Scanner Report to sonar.javan.co.id
 
