@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "test": "vitest",
-    "coverage": "vitest run --coverage",
+    "coverage": "vitest --coverage",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
@@ -60,6 +60,7 @@
     "underscore": "^1.13.6",
     "vite": "^3.0.7",
     "vitest": "^0.25.6",
+    "vitest-sonar-reporter": "^0.5.0",
     "zustand": "^4.4.0"
   }
 }
