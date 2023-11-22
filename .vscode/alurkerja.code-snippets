@@ -95,5 +95,10 @@
       "const [selected, setSelected] = useState<number[]>([])"
     ],
     "description": "TableLowcode state with all featured"
+  },
+  "Import Alurkerja-ui": {
+    "prefix": "imaui",
+    "body": ["import {} from 'alurkerja-ui'"],
+    "description": "Import Alurkerja-ui"
   }
 }

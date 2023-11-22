@@ -1,15 +1,17 @@
 import { Link } from 'react-router-dom'
 
-export const Error = () => {
+export const ErrorPage = () => {
   return (
     <div className="lg:p-8 h-screen">
-      <div className="flex items-center text-lg font-medium">Bubur Onic</div>
+      <div className="flex items-center text-lg font-medium" data-testid="logo">
+        Bubur Onic
+      </div>
       <div className="h-full flex justify-center pt-20">
         <div className="space-y-4">
-          <h1 className="text-5xl font-bold">
+          <h1 className="text-5xl font-bold" data-testid="title">
             Halaman sedang tidak dapat diakses
           </h1>
-          <p>
+          <p data-testid="message">
             Mohon maaf atas kendala yang dialami, harap menghubungi bagian
             administrator
           </p>

@@ -60,9 +60,7 @@ export const ResetPassword = () => {
       })
   }
 
-  if (!token) {
-    return <NotFound />
-  } else if (!email) {
+  if (!token || !email) {
     return <NotFound />
   }
 
@@ -98,7 +96,7 @@ export const ResetPassword = () => {
           </div>
           <div>
             <label htmlFor="password_confirmation">
-              Konfirmasi Password Baru
+              Konfirmasi Password Baru{' '}
               <span className="text-red-600 text-sm">*</span>
             </label>
             <Input

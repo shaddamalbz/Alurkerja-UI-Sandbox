@@ -10,7 +10,6 @@ export const Register = () => {
     handleSubmit,
     register,
     formState: { errors },
-    getValues,
     setError,
   } = useForm({
     defaultValues: {
@@ -160,7 +159,7 @@ export const Register = () => {
           </div>
           <div>
             <label htmlFor="password">
-              Password Confirmation
+              Password Confirmation{' '}
               <span className="text-red-600 text-sm">*</span>
             </label>
             <Input

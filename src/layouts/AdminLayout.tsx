@@ -1,19 +1,23 @@
 import { useEffect, useState } from 'react'
-import { Outlet, useLocation, useNavigate, Link } from 'react-router-dom'
-import { Header, Sidebar } from 'alurkerja-ui'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
+import { Header, MenuConfig } from 'alurkerja-ui'
 import clsx from 'clsx'
 import { LogOut, User2 } from 'lucide-react'
 import { useCookies } from 'react-cookie'
 import { AxiosResponse } from 'axios'
 
 import { IUser } from '@/utils/types'
-import { menuConfig } from '@/utils/constants'
 import { FullLoading } from '@/pages/Others'
 import { axiosInstance } from '@/api'
 import { useAuthStore } from '@/stores'
+import { Sidebar } from '@/components'
+
+const MenuWrapper = (props: { children: JSX.Element; menu: MenuConfig }) => {
+  const { children, menu } = props
+  return <Link to={menu.href}>{children}</Link>
+}
 
 export function AdminLayout() {
-  const { pathname } = useLocation()
   const navigate = useNavigate()
   const { currentUser, setCurrentUser } = useAuthStore()
   const [cookies, _setCookies, removeCookies] = useCookies()
@@ -36,8 +40,7 @@ export function AdminLayout() {
         },
         (error) => {
           // Any status codes that falls outside the range of 2xx cause this function to trigger
-          if (error.response.status === 401) {
-          }
+
           return Promise.reject(error)
         }
       )
@@ -61,22 +64,11 @@ export function AdminLayout() {
 
   return (
     <div className="max-w-screen">
-      <div className="fixed">
-        <Sidebar
-          logo={
-            <div className="text-main-blue-alurkerja font-bold">Alurkerja</div>
-          }
-          toggled={toggled}
-          setToggled={setToggled}
-          menuConfig={menuConfig}
-          currentPathName={pathname}
-          menuWrapper={({ children, menu }) => (
-            <Link to={menu.href}>
-              <>{children}</>
-            </Link>
-          )}
-        />
-      </div>
+      <Sidebar
+        toggled={toggled}
+        setToggled={setToggled}
+        menuWrapper={MenuWrapper}
+      />
 
       <div
         className={clsx(
