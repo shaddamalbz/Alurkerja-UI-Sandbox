@@ -24,7 +24,7 @@ sonar-scanner:
       -Dsonar.sources=src
       -Dsonar.tests=src/__test__
       -Dsonar.test.inclusions=src/__test__
+      -Dsonar.test.inclusions=src/__test__/*.test.tsx
       -Dsonar.testExecutionReportPaths=sonar-report.xml
-      -Dsonar.typescript.lcov.reportPaths=sonar-report.xml
-      -Dsonar.coverageReportPaths=coverage/clover.xml
+      -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
   when: manual

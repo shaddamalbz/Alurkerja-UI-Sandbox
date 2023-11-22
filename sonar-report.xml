@@ -1,0 +1,15 @@
+<testExecutions version="1">
+  <file path="src\__test__\404.test.tsx">
+    <testCase name="404 Page - Should render logo &amp; message" duration="81" />
+  </file>
+  <file path="src\__test__\500.test.tsx">
+    <testCase name="404 Page - Should render logo &amp; message" duration="80" />
+  </file>
+  <file path="src\__test__\FullLoading.test.tsx">
+    <testCase name="404 Page - Should render logo &amp; message" duration="83" />
+  </file>
+  <file path="src\__test__\Login.test.tsx">
+    <testCase name="Login Page - should has error message when click button login while email &amp; password field is empty" duration="135" />
+    <testCase name="Login Page - should has error allert when login failed" duration="295" />
+  </file>
+</testExecutions>
