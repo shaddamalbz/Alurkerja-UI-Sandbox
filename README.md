@@ -49,7 +49,7 @@ snippet alurkerja merupakan shortcut yang dapat digunakan untuk mempercepat peng
 1. jalanakan server docker untuk sonar `docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest`
 2. buka di browser `http://localhost:9000/` dan login, login pertama kali menggunakan credential username=admin, password=admin, nanti akan diminta ganti passwword dan login selanjutkan akan menggunakan password baru
 3. buat project baru ikutin langkah2 nya sampai mendapatkan token
-4. download sonar scanner [Sonar Scanner](https://docs.sonarsource.com/sonarqube/latest/try-out-sonarqube), unzip + edit env variable add sonar sonar scanner on it
+4. download sonar scanner [Sonar Scanner](https://docs.sonarsource.com/sonarqube/latest/try-out-sonarqube), unzip + tambakan ke env variable contoh path nya `C:\Program Files\sonar-scanner-5.0.1.3006-windows\bin`
 5. pada file `sonar-project.properties` ganti `sonar.projectKey` dan `sonar.token` sesuai dengan informasi yang didapat ketika membuat project
 6. jalankan test dengan command `yarn coverage`
 7. buka terminal dan jalankan `sonar-scanner.bat`
