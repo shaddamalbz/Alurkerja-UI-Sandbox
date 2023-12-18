@@ -11,28 +11,27 @@
   "tasks": {
     "test": {
       "name": "test",
-      "command": "yarn test",
-      "runAtStart": false
+      "command": "yarn test"
     },
     "coverage": {
       "name": "coverage",
-      "command": "yarn coverage",
-      "runAtStart": false
+      "command": "yarn coverage"
     },
     "dev": {
       "name": "dev",
       "command": "yarn dev",
-      "runAtStart": true
+      "runAtStart": true,
+      "preview": {
+        "port": 5173
+      }
     },
     "build": {
       "name": "build",
-      "command": "yarn build",
-      "runAtStart": false
+      "command": "yarn build"
     },
     "preview": {
       "name": "preview",
-      "command": "yarn preview",
-      "runAtStart": false
+      "command": "yarn preview"
     }
   }
 }
